@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REXMO PHOTOGRAPHY | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Syncopate:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .hero-img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: grayscale(30%) contrast(110%); transform: scale(1.1); animation: scaleDownImage 3s var(--ease-lux) forwards; z-index: -1; }
+        .hero h1 { font-family: var(--font-display); font-size: clamp(3.5rem, 8vw, 10rem); text-transform: uppercase; text-align: center; line-height: 0.9; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); animation: fadeUpText 2s var(--ease-lux) 0.8s forwards; opacity: 0; }
+        .hero h1 span { display: block; color: var(--gold); -webkit-text-stroke: 0; font-style: italic; padding-left: 10vw; }
+        @keyframes scaleDownImage { to { transform: scale(1); opacity: 0.4; } }
+        @keyframes fadeUpText { to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div class="preloader" id="preloader"><div class="loader-text">REXMO</div></div>
+    <div class="noise-overlay"></div>
+    <div class="cursor-dot" id="cursor-dot"></div><div class="cursor-outline" id="cursor-outline"></div>
+
+    <header>
+        <a href="index.html" class="logo hover-target">REXMO</a>
+        <nav class="nav-links">
+            <div class="magnetic-wrap hover-target"><a href="index.html" class="magnetic-btn">Home</a></div>
+            <div class="magnetic-wrap hover-target"><a href="about.html" class="magnetic-btn">About Us</a></div>
+            <div class="magnetic-wrap hover-target"><a href="services.html" class="magnetic-btn">Services</a></div>
+            <div class="magnetic-wrap hover-target"><a href="gallery.html" class="magnetic-btn">Gallery</a></div>
+            <div class="magnetic-wrap hover-target"><a href="contact.html" class="magnetic-btn" style="color: var(--gold);">Contact</a></div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000" class="hero-img" alt="Studio">
+        <h1>Rexmo <br><span>Photography</span></h1>
+    </section>
+
+    <section class="manifesto scroll-trigger reveal-up">
+        <span class="section-label">The Standard</span>
+        <p>Light is our medium. Emotion is our canvas. We craft <span>visual legacies</span> for those who demand the extraordinary.</p>
+    </section>
+
+    <section class="content-grid" style="padding-bottom: 10vw;">
+        <div class="grid-card scroll-trigger reveal-up delay-1 hover-target">
+            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800" alt="Editorial">
+            <h3>Fashion & Editorial</h3>
+            <p>Striking, magazine-ready visuals that elevate brands and define modern aesthetics.</p>
+        </div>
+        <div class="grid-card scroll-trigger reveal-up delay-2 hover-target">
+            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800" alt="Weddings">
+            <h3>Luxury Weddings</h3>
+            <p>Cinematic documentation of your most profound moments, preserved with editorial elegance.</p>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-glow"></div>
+        <h2 class="hover-target">Connect.</h2>
+        <div class="magnetic-wrap hover-target" data-strength="60">
+            <a href="contact.html" class="outline-btn magnetic-btn">Start a Project</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REXMO PHOTOGRAPHY | Contact</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Syncopate:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="preloader" id="preloader"><div class="loader-text">INQUIRE</div></div>
+    <div class="noise-overlay"></div>
+    <div class="cursor-dot" id="cursor-dot"></div><div class="cursor-outline" id="cursor-outline"></div>
+
+    <header>
+        <a href="index.html" class="logo hover-target">REXMO</a>
+        <nav class="nav-links">
+            <div class="magnetic-wrap hover-target"><a href="index.html" class="magnetic-btn">Home</a></div>
+            <div class="magnetic-wrap hover-target"><a href="about.html" class="magnetic-btn">About Us</a></div>
+            <div class="magnetic-wrap hover-target"><a href="services.html" class="magnetic-btn">Services</a></div>
+            <div class="magnetic-wrap hover-target"><a href="gallery.html" class="magnetic-btn">Gallery</a></div>
+            <div class="magnetic-wrap hover-target"><a href="contact.html" class="magnetic-btn" style="color: var(--gold);">Contact</a></div>
+        </nav>
+    </header>
+
+    <section class="section-padding" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span class="section-label scroll-trigger reveal-up text-center">Commence</span>
+        <h2 style="font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5rem); color: var(--gold); margin-bottom: 4rem; text-align: center;" class="scroll-trigger reveal-up delay-1">Let's Create.</h2>
+        
+        <div class="form-container scroll-trigger reveal-up delay-2">
+            <form action="#" method="POST" class="hover-target">
+                <div class="form-group">
+                    <input type="text" id="name" required>
+                    <label for="name">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" required>
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="service" required>
+                    <label for="service">Inquiry Type (Wedding, Editorial, etc.)</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" required></textarea>
+                    <label for="message">Project Details / Date</label>
+                </div>
+                
+                <div style="text-align: center; margin-top: 3rem;">
+                    <button type="submit" class="outline-btn" style="cursor: none;">Submit Inquiry</button>
+                </div>
+            </form>
+        </div>
+        
+        <div style="margin-top: 6rem; text-align: center; font-family: var(--font-accent); color: var(--text-muted); font-size: 0.75rem; letter-spacing: 2px; line-height: 2;">
+            <p>hello@rexmophotography.com</p>
+            <p>+1 (555) 019-2834</p>
+            <p style="margin-top: 1rem; color: var(--gold);">Based in New York. Available Worldwide.</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
