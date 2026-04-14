@@ -3,69 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REXMO PHOTOGRAPHY | Services</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Syncopate:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <title>Services | Rexmo Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        .service-row { display: flex; justify-content: space-between; align-items: center; padding: 4rem 0; border-bottom: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s var(--ease-lux); }
-        .service-row:hover { padding-left: 2rem; border-bottom-color: var(--gold); }
-        .service-row h3 { font-size: clamp(2rem, 4vw, 3.5rem); color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3); transition: all 0.4s ease; font-family: var(--font-display); }
-        .service-row:hover h3 { color: var(--gold); -webkit-text-stroke: 0; }
-        .service-desc { font-family: var(--font-body); color: var(--text-muted); max-width: 350px; text-align: right; font-size: 0.95rem; line-height: 1.6; opacity: 0; transform: translateX(-20px); transition: all 0.4s var(--ease-lux); }
-        .service-row:hover .service-desc { opacity: 1; transform: translateX(0); }
+        /* Forces all service grids to perfectly mirror the image height */
+        .service-grid { align-items: stretch !important; }
+        .service-img { aspect-ratio: 4/5; height: auto; }
+        .service-box { height: 100% !important; justify-content: center; }
     </style>
 </head>
 <body>
-    <div class="preloader" id="preloader"><div class="loader-text">SERVICES</div></div>
-    <div class="noise-overlay"></div>
-    <div class="cursor-dot" id="cursor-dot"></div><div class="cursor-outline" id="cursor-outline"></div>
 
-    <header>
-        <a href="index.html" class="logo hover-target">REXMO</a>
-        <nav class="nav-links">
-            <div class="magnetic-wrap hover-target"><a href="index.html" class="magnetic-btn">Home</a></div>
-            <div class="magnetic-wrap hover-target"><a href="about.html" class="magnetic-btn">About Us</a></div>
-            <div class="magnetic-wrap hover-target"><a href="services.html" class="magnetic-btn">Services</a></div>
-            <div class="magnetic-wrap hover-target"><a href="gallery.html" class="magnetic-btn">Gallery</a></div>
-            <div class="magnetic-wrap hover-target"><a href="contact.html" class="magnetic-btn" style="color: var(--gold);">Contact</a></div>
-        </nav>
+    <div class="preloader">
+        <div class="preloader-logo"><img src="logo-white.jpg" class="logo-img logo-img-preloader" alt="Rexmo Photography Logo"></div>
+    </div>
+
+    <nav>
+        <a href="index.html" class="logo"><img src="logo-black.jpg" class="logo-img logo-img-navbar" alt="Rexmo Photography Logo"></a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" class="active-link">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="poetry.html">Poetry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <p class="gs-up" style="font-family: var(--font-sans); letter-spacing: 6px; text-transform: uppercase; color: var(--accent); font-size: 0.75rem; margin-bottom: 1.5rem; font-weight: 500;">OUR OFFERINGS</p>
+        <h1 class="title-large split-text">Curated <span class="gold-italic">Collections</span></h1>
+        <p class="text-large gs-up" style="margin: 0 auto;">Bespoke photography experiences designed for those who appreciate fine art.</p>
     </header>
 
-    <section class="section-padding">
-        <span class="section-label scroll-trigger reveal-up">Our Capabilities</span>
-        
-        <div class="service-row hover-target scroll-trigger reveal-up">
-            <h3>Editorial & Commercial</h3>
-            <p class="service-desc">Complete creative direction and lighting design for brand campaigns, lookbooks, and high-impact digital marketing assets.</p>
+    <section class="section-padding match-grid service-grid" style="padding-top: 4vw;">
+        <div class="img-container service-img gs-up">
+            <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800" alt="Weddings" loading="lazy" decoding="async">
         </div>
-        <div class="service-row hover-target scroll-trigger reveal-up delay-1">
-            <h3>Luxury Weddings</h3>
-            <p class="service-desc">Unobtrusive, cinematic documentation that preserves the authentic emotion and grand scale of your celebration.</p>
-        </div>
-        <div class="service-row hover-target scroll-trigger reveal-up delay-2">
-            <h3>Fine Art Portraiture</h3>
-            <p class="service-desc">Bespoke sessions focusing on dramatic shadows, elegant composition, and timeless aesthetics designed for framing.</p>
+        <div class="grey-text-box service-box gs-up">
+            <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--accent); letter-spacing: 4px; margin-bottom: 1.5rem; display: block; font-weight: 500;">01</span>
+            <h2 class="title-medium split-text" style="margin-bottom: 1rem;">Wedding <span class="gold-italic">Narratives</span></h2>
+            <p class="text-body">Our flagship offering. Comprehensive editorial coverage of your wedding weekend, blending digital precision with analog warmth.</p>
+            <p class="text-body" style="margin-bottom: 0;">Includes a secondary photographer, fine-art heirloom album, and private online gallery.</p>
+            <a href="contact.html" class="btn-primary" style="width: max-content;">Inquire Now</a>
         </div>
     </section>
 
-    <section class="content-grid" style="padding-top: 0;">
-        <div class="grid-card scroll-trigger reveal-up">
-            <span class="section-label" style="margin-bottom: 0;">Phase I</span>
-            <h3>Consultation</h3>
-            <p>Every masterpiece begins with an understanding. We meet to discuss your aesthetic vision, mood boards, and the specific narrative you wish to convey through our lens.</p>
+    <section class="section-padding match-grid reverse service-grid" style="padding-top: 0;">
+        <div class="img-container service-img gs-up">
+            <img src="https://images.unsplash.com/photo-1557002664-9f2257d078ee?q=80&w=800" alt="Maternity" loading="lazy" decoding="async">
         </div>
-        <div class="grid-card scroll-trigger reveal-up delay-1">
-            <span class="section-label" style="margin-bottom: 0;">Phase II</span>
-            <h3>Production</h3>
-            <p>The execution. Bringing Hollywood-grade lighting and editorial direction to your set or venue. We guide you seamlessly, ensuring the experience feels effortless.</p>
-        </div>
-        <div class="grid-card scroll-trigger reveal-up delay-2">
-            <span class="section-label" style="margin-bottom: 0;">Phase III</span>
-            <h3>Mastering</h3>
-            <p>Our signature post-production. Every selected image undergoes meticulous color grading, retouching, and finishing to achieve that distinctive, timeless Rexmo aesthetic.</p>
+        <div class="grey-text-box service-box gs-up">
+            <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--accent); letter-spacing: 4px; margin-bottom: 1.5rem; display: block; font-weight: 500;">02</span>
+            <h2 class="title-medium split-text" style="margin-bottom: 1rem;">Maternity <span class="gold-italic">Sessions</span></h2>
+            <p class="text-body" style="margin-bottom: 0;">Intimate, editorial-style portraiture celebrating motherhood. Guided posing, creative direction, and access to our studio wardrobe ensure timeless, elegant memories.</p>
+            <a href="contact.html" class="btn-primary" style="width: max-content;">Inquire Now</a>
         </div>
     </section>
 
-    <script src="script.js"></script>
+    <section class="section-padding match-grid service-grid" style="padding-top: 0;">
+        <div class="img-container service-img gs-up">
+            <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800" alt="Newborn" loading="lazy" decoding="async">
+        </div>
+        <div class="grey-text-box service-box gs-up">
+            <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--accent); letter-spacing: 4px; margin-bottom: 1.5rem; display: block; font-weight: 500;">03</span>
+            <h2 class="title-medium split-text" style="margin-bottom: 1rem;">Newborn <span class="gold-italic">Portraits</span></h2>
+            <p class="text-body" style="margin-bottom: 0;">Delicate, natural lighting and minimalist styling focus entirely on the pure, fleeting details of your newest addition. Shot in the comfort of our controlled studio environment.</p>
+            <a href="contact.html" class="btn-primary" style="width: max-content;">Inquire Now</a>
+        </div>
+    </section>
+
+    <section class="section-padding match-grid reverse service-grid" style="padding-top: 0;">
+        <div class="img-container service-img gs-up">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=800" alt="Modeling" loading="lazy" decoding="async">
+        </div>
+        <div class="grey-text-box service-box gs-up">
+            <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--accent); letter-spacing: 4px; margin-bottom: 1.5rem; display: block; font-weight: 500;">04</span>
+            <h2 class="title-medium split-text" style="margin-bottom: 1rem;">Modeling <span class="gold-italic">Portfolios</span></h2>
+            <p class="text-body" style="margin-bottom: 0;">High-fashion editorial shoots designed to elevate your personal brand. We provide cinematic lighting setups, creative direction, and industry-standard retouching for your comp card.</p>
+            <a href="contact.html" class="btn-primary" style="width: max-content;">Inquire Now</a>
+        </div>
+    </section>
+
+    <section class="section-padding match-grid service-grid" style="padding-top: 0;">
+        <div class="img-container service-img gs-up">
+            <img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=800" alt="Events" loading="lazy" decoding="async">
+        </div>
+        <div class="grey-text-box service-box gs-up">
+            <span style="font-family: var(--font-sans); font-size: 0.75rem; color: var(--accent); letter-spacing: 4px; margin-bottom: 1.5rem; display: block; font-weight: 500;">05</span>
+            <h2 class="title-medium split-text" style="margin-bottom: 1rem;">Event <span class="gold-italic">Coverage</span></h2>
+            <p class="text-body" style="margin-bottom: 0;">Sophisticated documentation of private events, anniversaries, and exclusive gatherings. Captured with a refined, unobtrusive eye to preserve the atmosphere and energy of the evening.</p>
+            <a href="contact.html" class="btn-primary" style="width: max-content;">Inquire Now</a>
+        </div>
+    </section>
+
+    <footer class="premium-footer">
+        <div class="footer-top">
+            <div class="footer-col gs-up">
+                <h4>Studio Address</h4>
+                <p>4/48-2 Near Church, Main Road</p>
+                <p>Kovalam, Kanyakumari District</p>
+                <p>Tamil Nadu, 629702</p>
+            </div>
+            <div class="footer-col gs-up">
+                <h4>Contact</h4>
+                <p><a href="mailto:jesleyfrantin@gmail.com" style="color: inherit; text-decoration: none;">jesleyfrantin@gmail.com</a></p>
+                <p><a href="https://api.whatsapp.com/send/?phone=919442788952&text&type=phone_number&app_absent=0" target="_blank" style="color: inherit; text-decoration: none;">+91 94427 88952 (WhatsApp)</a></p>
+            </div>
+            <div class="footer-col gs-up">
+                <h4>Social</h4>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/rexmophotography?igsh=c3ZuMDBrNGMxeXNx" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/share/1AwtRHeueA/" target="_blank">Facebook</a>
+                    <a href="https://youtube.com/@rexmophotography?si=XxUelmToL5P5iUma" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom gs-up">
+            <a href="index.html" class="logo"><img src="logo-white.jpg" class="logo-img logo-img-footer" alt="Rexmo Photography Logo"></a>
+            <p>© 2026 REXMO PHOTOGRAPHY. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

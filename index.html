@@ -3,65 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REXMO PHOTOGRAPHY | Home</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Syncopate:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <title>Rexmo Photography | Minimalist Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
         .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-        .hero-img { position: absolute; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; filter: grayscale(30%) contrast(110%); transform: scale(1.1); animation: scaleDownImage 3s var(--ease-lux) forwards; z-index: -1; }
-        .hero h1 { font-family: var(--font-display); font-size: clamp(3.5rem, 8vw, 10rem); text-transform: uppercase; text-align: center; line-height: 0.9; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7); animation: fadeUpText 2s var(--ease-lux) 0.8s forwards; opacity: 0; }
-        .hero h1 span { display: block; color: var(--gold); -webkit-text-stroke: 0; font-style: italic; padding-left: 10vw; }
-        @keyframes scaleDownImage { to { transform: scale(1); opacity: 0.4; } }
-        @keyframes fadeUpText { to { opacity: 1; transform: translateY(0); } }
+        .hero-bg { position: absolute; inset: -5%; z-index: 0; background: url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=2000') center/cover; filter: brightness(0.45); }
     </style>
 </head>
 <body>
-    <div class="preloader" id="preloader"><div class="loader-text">REXMO</div></div>
-    <div class="noise-overlay"></div>
-    <div class="cursor-dot" id="cursor-dot"></div><div class="cursor-outline" id="cursor-outline"></div>
 
-    <header>
-        <a href="index.html" class="logo hover-target">REXMO</a>
-        <nav class="nav-links">
-            <div class="magnetic-wrap hover-target"><a href="index.html" class="magnetic-btn">Home</a></div>
-            <div class="magnetic-wrap hover-target"><a href="about.html" class="magnetic-btn">About Us</a></div>
-            <div class="magnetic-wrap hover-target"><a href="services.html" class="magnetic-btn">Services</a></div>
-            <div class="magnetic-wrap hover-target"><a href="gallery.html" class="magnetic-btn">Gallery</a></div>
-            <div class="magnetic-wrap hover-target"><a href="contact.html" class="magnetic-btn" style="color: var(--gold);">Contact</a></div>
-        </nav>
+    <div class="preloader">
+        <div class="preloader-logo"><img src="logo-white.jpg" class="logo-img logo-img-preloader" alt="Rexmo Photography Logo"></div>
+    </div>
+
+    <nav>
+        <a href="index.html" class="logo"><img src="logo-black.jpg" class="logo-img logo-img-navbar" alt="Rexmo Photography Logo"></a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="poetry.html">Poetry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-bg" decoding="async"></div>
+        
+        <div style="text-align: center; z-index: 2; position: relative; padding: 0 5vw; display: flex; flex-direction: column; align-items: center;">
+
+            <div class="gs-up" style="margin-bottom: 3.5rem;">
+                <h1 style="font-family: var(--font-serif); font-size: clamp(4.5rem, 12vw, 9rem); line-height: 0.9; font-weight: 400; margin: 0; color: var(--accent); letter-spacing: 2px;">Rexmo</h1>
+                <h2 style="font-family: var(--font-serif); font-size: clamp(0.7rem, 2.5vw, 1.2rem); letter-spacing: 14px; font-weight: 400; text-transform: uppercase; margin: 10px -14px 15px 0; color: var(--text-primary);">Photography</h2>
+                <p style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 400; letter-spacing: 2px; color: var(--accent);">Est. 1992</p>
+            </div>
+
+            <p class="gs-up text-large" style="color: #FFFFFF; max-width: 800px; margin: 0 auto; text-align: center; font-weight: 600;">
+                For couples who choose legacy over trends, your love unfolds as a timeless cinematic masterpiece.
+            </p>
+        </div>
     </header>
 
-    <section class="hero">
-        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=2000" class="hero-img" alt="Studio">
-        <h1>Rexmo <br><span>Photography</span></h1>
-    </section>
+    <div class="statement-strip gs-up">
+        <p class="statement-text">"Preserving the profound, fleeting moments of your legacy."</p>
+    </div>
 
-    <section class="manifesto scroll-trigger reveal-up">
-        <span class="section-label">The Standard</span>
-        <p>Light is our medium. Emotion is our canvas. We craft <span>visual legacies</span> for those who demand the extraordinary.</p>
-    </section>
-
-    <section class="content-grid" style="padding-bottom: 10vw;">
-        <div class="grid-card scroll-trigger reveal-up delay-1 hover-target">
-            <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=800" alt="Editorial">
-            <h3>Fashion & Editorial</h3>
-            <p>Striking, magazine-ready visuals that elevate brands and define modern aesthetics.</p>
+    <section class="section-padding match-grid">
+        <div class="img-container gs-up">
+            <img src="https://images.unsplash.com/photo-1542038383-7c15e8e8edb9?q=80&w=800" alt="Studio Aesthetic" loading="lazy" decoding="async">
         </div>
-        <div class="grid-card scroll-trigger reveal-up delay-2 hover-target">
-            <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800" alt="Weddings">
-            <h3>Luxury Weddings</h3>
-            <p>Cinematic documentation of your most profound moments, preserved with editorial elegance.</p>
+        <div class="grey-text-box gs-up">
+            <h2 class="title-medium split-text">Defining the <br><span class="gold-italic">Narrative</span></h2>
+            <p class="text-body">We do not merely document events; we author your visual history. Our aesthetic is anchored in the elegant tension between raw, unscripted emotion and the meticulous composition of high-fashion editorial.</p>
+            <p class="text-body" style="margin-bottom: 0;">Whether capturing the grand architecture of a wedding or the quiet intimacy of a newborn portrait, we produce timeless heirlooms crafted to appreciate in emotional value over generations.</p>
+            <a href="about.html" class="btn-primary" style="width: max-content;">Discover the Studio</a>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-glow"></div>
-        <h2 class="hover-target">Connect.</h2>
-        <div class="magnetic-wrap hover-target" data-strength="60">
-            <a href="contact.html" class="outline-btn magnetic-btn">Start a Project</a>
+    <section class="section-padding match-grid reverse">
+        <div class="img-container gs-up">
+            <img src="https://images.unsplash.com/photo-1516962215378-7fa2e137ae93?q=80&w=800" alt="Vintage Camera" loading="lazy" decoding="async">
+        </div>
+        <div class="grey-text-box gs-up">
+            <h2 class="title-medium split-text">The Analog <br><span class="gold-italic">Heritage</span></h2>
+            <p class="text-body">In an increasingly rapid, digital world, the tactile magic of analog film is a rare luxury. We honor the heritage of our craft by incorporating authentic 35mm and medium format film into our collections.</p>
+            <p class="text-body" style="margin-bottom: 0;">Film forces us to slow down, to breathe, and to wait for the exact, perfect moment. The resulting grain and texture provide a deeply romantic counterpart to your pristine digital gallery.</p>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div style="text-align: center; margin-bottom: 5rem;">
+            <h2 class="title-medium split-text" style="margin-bottom: 0.5rem;">Curated <span class="gold-italic">Collections</span></h2>
+        </div>
+        
+        <div class="collections-grid">
+            <a href="services.html" class="collection-card gs-up">
+                <div class="shape-pill"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600" alt="Weddings" loading="lazy" decoding="async"></div>
+                <h3>Weddings</h3>
+            </a>
+            <a href="services.html" class="collection-card gs-up">
+                <div class="shape-pill"><img src="https://images.unsplash.com/photo-1557002664-9f2257d078ee?q=80&w=600" alt="Maternity" loading="lazy" decoding="async"></div>
+                <h3>Maternity</h3>
+            </a>
+            <a href="services.html" class="collection-card gs-up">
+                <div class="shape-pill"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=600" alt="Newborn" loading="lazy" decoding="async"></div>
+                <h3>Newborn</h3>
+            </a>
+            <a href="services.html" class="collection-card gs-up">
+                <div class="shape-pill"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600" alt="Modeling" loading="lazy" decoding="async"></div>
+                <h3>Modeling</h3>
+            </a>
+            <a href="services.html" class="collection-card gs-up">
+                <div class="shape-pill"><img src="https://images.unsplash.com/photo-1511556532299-8f662fc26c06?q=80&w=600" alt="Events" loading="lazy" decoding="async"></div>
+                <h3>Events</h3>
+            </a>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <h2 class="title-medium split-text" style="text-align: center; margin-bottom: 3rem;">Selected <span class="gold-italic">Frames</span></h2>
+        
+        <div class="mosaic-gallery">
+            <div class="mosaic-item mosaic-large"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200" alt="Feature Frame" loading="lazy" decoding="async"></div>
+            <div class="mosaic-item mosaic-horiz"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=800" alt="Horizontal Frame" loading="lazy" decoding="async"></div>
+            <div class="mosaic-item mosaic-vert"><img src="https://images.unsplash.com/photo-1532712938310-34cb3982ef74?q=80&w=800" alt="Vertical Frame" loading="lazy" decoding="async"></div>
+            <div class="mosaic-item mosaic-vert"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=800" alt="Vertical Frame" loading="lazy" decoding="async"></div>
+            <div class="mosaic-item mosaic-sq"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800" alt="Square Frame" loading="lazy" decoding="async"></div>
+            <div class="mosaic-item mosaic-sq"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=800" alt="Square Frame" loading="lazy" decoding="async"></div>
+            <div class="mosaic-item mosaic-horiz"><img src="https://images.unsplash.com/photo-1542038383-7c15e8e8edb9?q=80&w=800" alt="Horizontal Frame" loading="lazy" decoding="async"></div>
+            <div class="mosaic-item mosaic-sq"><img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?q=80&w=800" alt="Square Frame" loading="lazy" decoding="async"></div>
+            <div class="mosaic-item mosaic-sq"><img src="https://images.unsplash.com/photo-1557002664-9f2257d078ee?q=80&w=800" alt="Square Frame" loading="lazy" decoding="async"></div>
+        </div>
+
+        <div style="text-align: center; margin-top: 5rem;" class="gs-up">
+            <a href="gallery.html" class="btn-primary">View Archives</a>
+        </div>
+    </section>
+
+    <section class="section-padding">
+        <div class="grid-2" style="margin-bottom: 4rem;">
+            <div class="gs-up" style="display: flex; align-items: center;">
+                <h2 class="title-medium split-text" style="margin: 0;">Cinematic <br><span class="gold-italic">Motion</span></h2>
+            </div>
+            <div class="grey-text-box gs-up">
+                <p class="text-body" style="margin-bottom: 0;">Rexmo Photography offers highly exclusive, unified cinematography. Blending modern 4K digital cinema with nostalgic Super 8mm analog film, our directors create sweeping, majestic films that mirror the exquisite editorial aesthetic of your still photography. Every frame is meticulously graded to ensure your legacy lives on in breathtaking motion.</p>
+            </div>
+        </div>
+        <div class="video-hero gs-up">
+            <img src="https://images.unsplash.com/photo-1516483638261-f40af5aa3463?q=80&w=2000" alt="Cinematic Reel" loading="lazy" decoding="async">
+            <div class="play-btn">Play Film</div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="padding-bottom: 12vw;">
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <h2 class="title-medium split-text" style="margin-bottom: 0.5rem;">Client <span class="gold-italic">Reviews</span></h2>
+            <p class="gs-up" style="font-family: var(--font-sans); color: #555; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px;"><i class="fab fa-google" style="margin-right: 5px;"></i> Verified Google Reviews</p>
+        </div>
+        
+        <div class="reviews-marquee-container gs-up">
+            <div class="reviews-marquee">
+                <div class="clean-review">
+                    <div class="clean-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="clean-review-text">"Outstanding wedding photography! Creative shots, perfect timing, and excellent quality. The team was super easy to work with and understood exactly what we wanted."</p>
+                    <div class="clean-reviewer"><i class="fab fa-google"></i><div class="clean-reviewer-info"><h4>Irone Fleedon</h4><p>Wedding Client</p></div></div>
+                </div>
+                <div class="clean-review">
+                    <div class="clean-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="clean-review-text">"Absolutely loved the wedding photography! Every moment was captured so beautifully and naturally. Very professional, punctual, and friendly team."</p>
+                    <div class="clean-reviewer"><i class="fab fa-google"></i><div class="clean-reviewer-info"><h4>Rohan</h4><p>Wedding Client</p></div></div>
+                </div>
+                <div class="clean-review">
+                    <div class="clean-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="clean-review-text">"I booked Rexmo photography for my son’s first birthday. My family members and myself totally loved the photos and videos."</p>
+                    <div class="clean-reviewer"><i class="fab fa-google"></i><div class="clean-reviewer-info"><h4>Sandhya Sekhar</h4><p>Event Client</p></div></div>
+                </div>
+                <div class="clean-review" aria-hidden="true">
+                    <div class="clean-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="clean-review-text">"Outstanding wedding photography! Creative shots, perfect timing, and excellent quality. The team was super easy to work with and understood exactly what we wanted."</p>
+                    <div class="clean-reviewer"><i class="fab fa-google"></i><div class="clean-reviewer-info"><h4>Irone Fleedon</h4><p>Wedding Client</p></div></div>
+                </div>
+                <div class="clean-review" aria-hidden="true">
+                    <div class="clean-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="clean-review-text">"Absolutely loved the wedding photography! Every moment was captured so beautifully and naturally. Very professional, punctual, and friendly team."</p>
+                    <div class="clean-reviewer"><i class="fab fa-google"></i><div class="clean-reviewer-info"><h4>Rohan</h4><p>Wedding Client</p></div></div>
+                </div>
+                <div class="clean-review" aria-hidden="true">
+                    <div class="clean-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <p class="clean-review-text">"I booked Rexmo photography for my son’s first birthday. My family members and myself totally loved the photos and videos."</p>
+                    <div class="clean-reviewer"><i class="fab fa-google"></i><div class="clean-reviewer-info"><h4>Sandhya Sekhar</h4><p>Event Client</p></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="premium-footer">
+        <div class="footer-top">
+            <div class="footer-col gs-up">
+                <h4>Studio Address</h4>
+                <p>4/48-2 Near Church, Main Road</p>
+                <p>Kovalam, Kanyakumari District</p>
+                <p>Tamil Nadu, 629702</p>
+            </div>
+            <div class="footer-col gs-up">
+                <h4>Contact</h4>
+                <p><a href="mailto:jesleyfrantin@gmail.com" style="color: inherit; text-decoration: none;">jesleyfrantin@gmail.com</a></p>
+                <p><a href="https://api.whatsapp.com/send/?phone=919442788952&text&type=phone_number&app_absent=0" target="_blank" style="color: inherit; text-decoration: none;">+91 94427 88952 (WhatsApp)</a></p>
+            </div>
+            <div class="footer-col gs-up">
+                <h4>Social</h4>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/rexmophotography?igsh=c3ZuMDBrNGMxeXNx" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/share/1AwtRHeueA/" target="_blank">Facebook</a>
+                    <a href="https://youtube.com/@rexmophotography?si=XxUelmToL5P5iUma" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom gs-up">
+            <a href="index.html" class="logo"><img src="logo-white.jpg" class="logo-img logo-img-footer" alt="Rexmo Photography Logo"></a>
+            <p>© 2026 REXMO PHOTOGRAPHY. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

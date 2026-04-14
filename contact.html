@@ -3,62 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REXMO PHOTOGRAPHY | Contact</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;700&family=Syncopate:wght@400;700&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+    <title>Contact | Rexmo Photography</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="preloader" id="preloader"><div class="loader-text">INQUIRE</div></div>
-    <div class="noise-overlay"></div>
-    <div class="cursor-dot" id="cursor-dot"></div><div class="cursor-outline" id="cursor-outline"></div>
 
-    <header>
-        <a href="index.html" class="logo hover-target">REXMO</a>
-        <nav class="nav-links">
-            <div class="magnetic-wrap hover-target"><a href="index.html" class="magnetic-btn">Home</a></div>
-            <div class="magnetic-wrap hover-target"><a href="about.html" class="magnetic-btn">About Us</a></div>
-            <div class="magnetic-wrap hover-target"><a href="services.html" class="magnetic-btn">Services</a></div>
-            <div class="magnetic-wrap hover-target"><a href="gallery.html" class="magnetic-btn">Gallery</a></div>
-            <div class="magnetic-wrap hover-target"><a href="contact.html" class="magnetic-btn" style="color: var(--gold);">Contact</a></div>
-        </nav>
-    </header>
+    <div class="preloader">
+        <div class="preloader-logo"><img src="logo-white.jpg" class="logo-img logo-img-preloader" alt="Rexmo Photography Logo"></div>
+    </div>
 
-    <section class="section-padding" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <span class="section-label scroll-trigger reveal-up text-center">Commence</span>
-        <h2 style="font-family: var(--font-display); font-size: clamp(3rem, 6vw, 5rem); color: var(--gold); margin-bottom: 4rem; text-align: center;" class="scroll-trigger reveal-up delay-1">Let's Create.</h2>
+    <nav>
+        <a href="index.html" class="logo"><img src="logo-black.jpg" class="logo-img logo-img-navbar" alt="Rexmo Photography Logo"></a>
+        <div class="menu-toggle" id="mobile-menu">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="poetry.html">Poetry</a></li>
+            <li><a href="contact.html" class="active-link">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="section-padding match-grid" style="padding-top: 8vw; align-items: stretch;">
         
-        <div class="form-container scroll-trigger reveal-up delay-2">
-            <form action="#" method="POST" class="hover-target">
-                <div class="form-group">
-                    <input type="text" id="name" required>
-                    <label for="name">Your Name</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" id="email" required>
-                    <label for="email">Email Address</label>
-                </div>
-                <div class="form-group">
-                    <input type="text" id="service" required>
-                    <label for="service">Inquiry Type (Wedding, Editorial, etc.)</label>
-                </div>
-                <div class="form-group">
-                    <textarea id="message" required></textarea>
-                    <label for="message">Project Details / Date</label>
-                </div>
+        <div class="grey-text-box gs-up" style="padding: 4vw; justify-content: flex-start; gap: 3rem;">
+            
+            <div>
+                <p style="font-family: var(--font-sans); font-size: 0.65rem; color: var(--text-muted); letter-spacing: 4px; margin-bottom: 1.5rem; text-transform: uppercase; font-weight: 500;">Connect</p>
+                <h2 class="title-medium" style="margin-bottom: 2rem; line-height: 1.1;">Let's tell <br>your <span class="gold-italic">story</span>.</h2>
+                <p class="text-body" style="margin-bottom: 0;">Share your vision and timeline. We accept a limited number of celebrations each season to ensure a deeply curated experience.</p>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
                 
-                <div style="text-align: center; margin-top: 3rem;">
-                    <button type="submit" class="outline-btn" style="cursor: none;">Submit Inquiry</button>
+                <div>
+                    <h4 style="font-family: var(--font-sans); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 0.5rem; font-weight: 500;">Direct Email</h4>
+                    <a href="mailto:jesleyfrantin@gmail.com" class="text-body" style="color: var(--text-primary); text-decoration: none; margin-bottom: 0; display: block; font-weight: 400;">jesleyfrantin@gmail.com</a>
                 </div>
+
+                <div>
+                    <h4 style="font-family: var(--font-sans); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 0.5rem; font-weight: 500;">WhatsApp</h4>
+                    <a href="https://api.whatsapp.com/send/?phone=919442788952&text&type=phone_number&app_absent=0" target="_blank" class="text-body" style="color: var(--text-primary); text-decoration: none; margin-bottom: 0; display: block; font-weight: 400;">+91 94427 88952</a>
+                </div>
+
+                <div>
+                    <h4 style="font-family: var(--font-sans); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 4px; color: var(--accent); margin-bottom: 0.5rem; font-weight: 500;">Location</h4>
+                    <p class="text-body" style="color: var(--text-primary); margin-bottom: 0; max-width: none; font-weight: 400;">4/48-2 Near Church, Main Road<br>Kovalam, Kanyakumari District<br>Tamil Nadu, 629702</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="grey-text-box gs-up" style="padding: 4vw;">
+            <form action="#" method="POST" class="contact-form-grid">
+                <div class="form-field">
+                    <label>Name</label>
+                    <input type="text" placeholder="A. Sharma" required>
+                </div>
+                <div class="form-field">
+                    <label>Email</label>
+                    <input type="email" placeholder="hello@wanderlust.com" required>
+                </div>
+                <div class="form-field">
+                    <label>Phone</label>
+                    <input type="tel" placeholder="+91 98765 43210" required>
+                </div>
+                <div class="form-field">
+                    <label>Event Date</label>
+                    <input type="date" required>
+                </div>
+                <div class="form-field">
+                    <label>Event Type</label>
+                    <select required>
+                        <option value="" disabled selected>Select event type</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="maternity">Maternity</option>
+                        <option value="newborn">Newborn</option>
+                        <option value="event">Event / Other</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label>Location</label>
+                    <input type="text" placeholder="Taj Coromandel, Chennai" required>
+                </div>
+                <div class="form-field full-width">
+                    <label>Message</label>
+                    <textarea placeholder="Share your vision, timeline, and any must-have moments." rows="3" required></textarea>
+                </div>
+                <button type="submit" class="btn-submit full-width">Submit Enquiry</button>
             </form>
         </div>
-        
-        <div style="margin-top: 6rem; text-align: center; font-family: var(--font-accent); color: var(--text-muted); font-size: 0.75rem; letter-spacing: 2px; line-height: 2;">
-            <p>hello@rexmophotography.com</p>
-            <p>+1 (555) 019-2834</p>
-            <p style="margin-top: 1rem; color: var(--gold);">Based in New York. Available Worldwide.</p>
-        </div>
+
     </section>
 
-    <script src="script.js"></script>
+    <footer class="premium-footer" style="margin-top: 5vw;">
+        <div class="footer-top">
+            <div class="footer-col gs-up">
+                <h4>Studio Address</h4>
+                <p>4/48-2 Near Church, Main Road</p>
+                <p>Kovalam, Kanyakumari District</p>
+                <p>Tamil Nadu, 629702</p>
+            </div>
+            <div class="footer-col gs-up">
+                <h4>Contact</h4>
+                <p><a href="mailto:jesleyfrantin@gmail.com" style="color: inherit; text-decoration: none;">jesleyfrantin@gmail.com</a></p>
+                <p><a href="https://api.whatsapp.com/send/?phone=919442788952&text&type=phone_number&app_absent=0" target="_blank" style="color: inherit; text-decoration: none;">+91 94427 88952 (WhatsApp)</a></p>
+            </div>
+            <div class="footer-col gs-up">
+                <h4>Social</h4>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/rexmophotography?igsh=c3ZuMDBrNGMxeXNx" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/share/1AwtRHeueA/" target="_blank">Facebook</a>
+                    <a href="https://youtube.com/@rexmophotography?si=XxUelmToL5P5iUma" target="_blank">YouTube</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom gs-up">
+            <a href="index.html" class="logo"><img src="logo-white.jpg" class="logo-img logo-img-footer" alt="Rexmo Photography Logo"></a>
+            <p>© 2026 REXMO PHOTOGRAPHY. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
