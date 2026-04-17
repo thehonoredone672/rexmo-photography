@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block admin or private folders (edit if needed)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+
+# Allow important assets
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Sitemap location
+Sitemap: https://rexmophotography.com/sitemap.xml
