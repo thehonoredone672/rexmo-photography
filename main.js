@@ -46,18 +46,20 @@ if (menuToggle && navLinks) {
     });
 }
 
-// Fade Up Elements safely
+// Fade Up Elements safely using fromTo
 gsap.utils.toArray('.gs-up').forEach(element => {
-    // We use gsap.from() so they exist safely in HTML/CSS and just animate in
-    gsap.from(element, {
-        y: 40,
-        opacity: 0,
-        duration: 1,
-        ease: 'power3.out',
-        scrollTrigger: {
-            trigger: element,
-            start: 'top 85%',
-            toggleActions: 'play none none none'
+    gsap.fromTo(element, 
+        { y: 40, opacity: 0 },
+        {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: 'power3.out',
+            scrollTrigger: {
+                trigger: element,
+                start: 'top 85%',
+                toggleActions: 'play none none none'
+            }
         }
-    });
+    );
 });
