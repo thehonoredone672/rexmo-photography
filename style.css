@@ -15,6 +15,41 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
+/* -----------------------------------
+   1. MOBILE PHONES (Default Style)
+----------------------------------- */
+.navbar {
+    display: flex;
+    justify-content: center; /* Centers the logo horizontally */
+    align-items: center;
+    padding: 15px;
+    position: relative;
+}
+
+.logo-svg {
+    max-width: 90px; /* Keeps the logo size controlled */
+    height: auto;
+}
+
+/* -----------------------------------
+   2. TABLETS & DESKTOPS (768px and wider)
+----------------------------------- */
+@media screen and (min-width: 768px) {
+    .navbar {
+        justify-content: flex-start; /* Moves the logo to the left */
+        padding: 20px 40px; /* Adds space around the edges */
+    }
+
+    /* Optional: Make the logo slightly larger on desktop */
+    .logo-svg {
+        max-width: 190px;
+        margin-top: 5px;
+    }
+}
+
+
+
+
 html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
