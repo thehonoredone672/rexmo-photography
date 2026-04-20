@@ -7,13 +7,55 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Serve images from 'public' folder (available at /photo1.jpg, etc.)
+app.use(express.static('public'));
+
+// Serve static files (CSS, JS) from 'src' folder
+app.use(express.static('src'));
+
+// Route mappings - clean URLs without .html extension
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
+});
+
+app.get('/services', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'services.html'));
+});
+
+app.get('/gallery', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'gallery.html'));
+});
+
+app.get('/poetry', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'poetry.html'));
+});
+
+app.get('/contact', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'contact.html'));
+});
+
+app.get('/about', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'about.html'));
+});
+
+// Redirect root to home
+app.get('/', (req, res) => {
+    res.redirect('/home');
+});
+
+// Handle 404 - page not found
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'src', '404.html'));
+});
+
+
 // Middleware to parse form data and serve your static HTML/CSS files
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Serve static files (Assuming your HTML files are in a folder named 'public'. 
 // If they are in the root directory alongside server.js, use express.static(__dirname))
-app.use(express.static(__dirname)); 
+// app.use(express.static(__dirname)); 
 
 // Route to handle the form submission
 app.post('/submit-enquiry', async (req, res) => {
