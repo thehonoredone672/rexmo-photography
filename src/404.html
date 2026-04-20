@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Page Not Found | Rexmo Photography</title>
+    <meta name="title" content="Page Not Found | Rexmo Photography">
+    <meta name="description" content="The page you are looking for cannot be found.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500&family=Playfair+Display:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="theme-color" content="#030303">
+
+    <style>
+        :root {
+            --bg-color: #030303;     
+            --text-primary: #FFFFFF; 
+            --text-muted: #888888;   
+            --accent: #D4AF37;       
+            --border-light: rgba(255, 255, 255, 0.08); 
+            
+            --font-serif: 'Playfair Display', serif; 
+            --font-sans: 'Montserrat', sans-serif;
+            --smooth: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html.lenis, html.lenis body { height: auto; }
+        .lenis.lenis-smooth { scroll-behavior: auto !important; }
+        .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+        .lenis.lenis-stopped { overflow: clip; }
+
+        html { background-color: #030303 !important; }
+
+        html, body { 
+            margin: 0; padding: 0; width: 100%; min-height: 100vh;
+            background-color: var(--bg-color) !important; 
+            color: var(--text-primary); 
+            font-family: var(--font-serif); overflow-x: clip; 
+            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
+            overscroll-behavior-y: none;
+        }
+
+        ::-webkit-scrollbar { display: none; }
+        ::selection { background: var(--text-primary); color: var(--bg-color); }
+        a, button { text-decoration: none; color: inherit; outline: none; cursor: pointer; }
+
+        /* Typography */
+        .title-large { font-family: var(--font-serif); font-size: clamp(2.5rem, 6vw, 6rem); line-height: 1.1; margin-bottom: 1.5rem; font-weight: 300; letter-spacing: -2px;}
+        p { font-family: var(--font-sans); font-weight: 400; line-height: 1.8; letter-spacing: 0.5px; }
+        .text-large { font-family: var(--font-sans); font-size: clamp(1rem, 1.2vw, 1.15rem); line-height: 1.8; color: #EAEAEA; max-width: 650px; font-weight: 400; margin-bottom: 2rem; opacity: 0.75; }
+        .gold-italic { color: var(--accent); font-style: normal; font-weight: 400; }
+
+        /* Buttons */
+        .btn-primary { display: inline-flex; align-items: center; margin-top: 1rem; padding: 0.5rem 0; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 4px; border-bottom: 1px solid rgba(255,255,255,0.2); transition: all 0.4s var(--smooth); color: var(--text-primary); position: relative; font-family: var(--font-sans); font-weight: 500; }
+        .btn-primary::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0%; height: 1px; background: var(--accent); transition: width 0.4s var(--smooth); }
+        .btn-primary:hover { padding-left: 10px; padding-right: 10px; color: var(--accent); border-bottom-color: transparent;}
+        .btn-primary:hover::after { width: 100%; }
+
+        /* Navigation */
+        nav { 
+            position: fixed; 
+            top: 0; left: 0; width: 100%; 
+            padding: 1.5rem 5vw; 
+            display: flex; justify-content: space-between; align-items: center; 
+            z-index: 9999 !important; 
+            background-color: transparent; 
+            transition: padding 0.4s ease, background-color 0.4s ease; 
+            transform: translateZ(100px);
+            will-change: background-color, padding;
+        }
+        nav.scrolled { 
+            padding: 0.8rem 5vw; 
+            background-color: rgba(3, 3, 3, 0.98); 
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px); 
+            border-bottom: 1px solid var(--border-light); 
+        }
+
+        .logo { display: flex; align-items: center; z-index: 1002; position: relative; transition: opacity 0.4s ease; }
+        .logo:hover { opacity: 0.7; }
+        .logo-svg { max-width: 110px; height: auto; display: block; margin-top: 0; }
+
+        .menu-toggle { display: none; color: var(--text-primary); font-size: 1.2rem; z-index: 1002; cursor: pointer;}
+        .nav-links { display: flex; gap: 3vw; list-style: none; }
+        .nav-links a { font-family: var(--font-sans); font-size: 0.6rem; text-transform: uppercase; font-weight: 500; letter-spacing: 3px; transition: color 0.4s ease, opacity 0.4s ease; opacity: 0.5; position: relative; }
+        .nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0%; height: 1px; background: var(--text-primary); transition: width 0.4s var(--smooth); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { opacity: 1; color: var(--text-primary); }
+
+        /* 404 Hero Section */
+        .hero-404 { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 0 5vw; position: relative; }
+
+        /* Footer */
+        .premium-footer { padding: 4vw 0 0 0; width: 100%; border-top: 1px solid var(--border-light); }
+        .footer-top { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5vw; padding: 0 5vw 3vw 5vw; text-align: left; max-width: 1200px; margin: 0 auto;}
+        .footer-col h4 { font-family: var(--font-sans); color: var(--accent) !important; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 1.5rem; font-weight: 500;}
+        .footer-col p { font-family: var(--font-sans); color: rgba(255, 255, 255, 0.85); font-size: 0.8rem; line-height: 2; font-weight: 400;}
+        .footer-links { display: flex; flex-direction: column; gap: 0.8rem; }
+        .footer-links a { font-family: var(--font-sans); color: rgba(255, 255, 255, 0.85); font-size: 0.8rem; transition: color 0.3s ease; text-transform: uppercase; letter-spacing: 2px; font-weight: 400;}
+        .footer-links a:hover { color: var(--accent); }
+
+        .footer-divider-line { width: 100%; height: 1px; background-color: var(--border-light); }
+        .footer-bottom { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; padding: 1.5rem 5vw; }
+        .footer-bottom-left { flex: 1; display: flex; justify-content: flex-start; }
+        .footer-bottom-center { flex: 1; text-align: center; }
+        .footer-bottom-right { flex: 1; text-align: right; }
+        .footer-bottom p { font-family: var(--font-sans); color: rgba(255, 255, 255, 0.6); font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; margin: 0; font-weight: 500;}
+
+        /* Animation Class */
+        .gs-up { will-change: transform, opacity; transform: translateZ(0); backface-visibility: hidden; }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            nav { padding: 1.5rem 5vw !important; }
+            .logo-svg { max-width: 90px; }
+            
+            .menu-toggle { display: block; }
+            .nav-links { position: absolute; top: 80px; left: 5vw; width: 90vw; background-color: #121212; border: 1px solid rgba(255, 255, 255, 0.04); border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); padding: 2.5rem 0; flex-direction: column; justify-content: center; align-items: center; z-index: 999; gap: 2rem; opacity: 0; visibility: hidden; transform: translateY(-15px); transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease; }
+            .nav-links.active { opacity: 1; visibility: visible; transform: translateY(0); }
+            .nav-links a { font-size: 1rem; letter-spacing: 4px; opacity: 1; }
+            
+            .footer-top { grid-template-columns: 1fr; gap: 2.5rem; text-align: center; }
+            .footer-bottom { flex-direction: column; gap: 1.5rem; align-items: center; text-align: center; }
+            .footer-bottom-left { width: 100%; display: flex; justify-content: center; margin-bottom: 0.5rem; }
+            .footer-bottom-left .logo { margin: 0 auto; display: inline-block; }
+            .footer-bottom-center, .footer-bottom-right { width: 100%; text-align: center !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 40" width="100%" height="100%">
+                <text x="0" y="25" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#ffffff">Rexmo</text>
+                <text x="2.5" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="3" font-weight="bold" letter-spacing="0.4em" fill="#ffffff">PHOTOGRAPHY</text>
+            </svg>
+        </a>
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="poetry.html">Poetry</a></li>
+            <li><a href="locations.html">Locations</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero-404">
+        <p class="gs-up" style="font-family: var(--font-sans); letter-spacing: 6px; text-transform: uppercase; color: var(--accent); font-size: 0.75rem; margin-bottom: 1.5rem; font-weight: 500;">ERROR 404</p>
+        
+        <h1 class="title-large gs-up" style="font-size: clamp(3.5rem, 8vw, 7rem); margin-bottom: 1rem; line-height: 1;">
+            Missing <span class="gold-italic">Frame</span>
+        </h1>
+        
+        <p class="text-large gs-up" style="margin: 0 auto 3rem auto; max-width: 500px;">
+            The moment you are looking for has been misplaced in our archives, or the link is broken. Let's get you back into focus.
+        </p>
+        
+        <div class="gs-up">
+            <a href="index.html" class="btn-primary">Return to Homepage</a>
+        </div>
+    </section>
+
+    <footer class="premium-footer">
+        <div class="footer-top gs-up">
+            <div class="footer-col">
+                <h4>Studio Address</h4>
+                <p>4/48-2 Near Church, Main Road, Kovalam, Kanyakumari District, Tamil Nadu, 629702</p>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><a href="mailto:jesleyfrantin@gmail.com" style="color: inherit; text-decoration: none;">jesleyfrantin@gmail.com</a></p>
+                <p><a href="https://api.whatsapp.com/send/?phone=919442788952" target="_blank" style="color: inherit; text-decoration: none;">+91 94427 88952 (WhatsApp)</a></p>
+            </div>
+            <div class="footer-col">
+                <h4>Social</h4>
+                <div class="footer-links">
+                    <a href="https://www.instagram.com/rexmophotography?igsh=c3ZuMDBrNGMxeXNx" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/share/1AwtRHeueA/" target="_blank">Facebook</a>
+                    <a href="https://youtube.com/@rexmophotography?si=XxUelmToL5P5iUma" target="_blank">YouTube</a>
+                    <a href="https://pin.it/3im3JdDBz" target="_blank">Pinterest</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider-line"></div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <a href="index.html" class="logo">
+                    <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 40" width="100%" height="100%">
+                        <text x="0" y="25" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#ffffff">Rexmo</text>
+                        <text x="2.5" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="3" font-weight="bold" letter-spacing="0.4em" fill="#ffffff">PHOTOGRAPHY</text>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-bottom-center">
+                <p>Crafted by <a href="https://dexys.in" target="_blank" style="color: var(--accent); transition: color 0.3s ease;">Dexys IT Solutions</a></p>
+            </div>
+            <div class="footer-bottom-right">
+                <p>© 2026 REXMO PHOTOGRAPHY. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <script>
+        // 1. Initialize Lenis Smooth Scroll
+        const lenis = new Lenis({
+            duration: 1.2,
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            direction: 'vertical',
+            gestureDirection: 'vertical',
+            smooth: true,
+            mouseMultiplier: 1,
+            smoothTouch: false,
+            touchMultiplier: 2,
+            infinite: false,
+        });
+
+        lenis.on('scroll', ScrollTrigger.update);
+        gsap.ticker.add((time)=>{ lenis.raf(time * 1000) });
+
+        // 2. Navbar Logic
+        const nav = document.querySelector('nav');
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (nav) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                    nav.style.backgroundColor = ''; 
+                }
+            });
+        }
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                
+                const icon = menuToggle.querySelector('i');
+                if (navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                    if(nav) nav.style.backgroundColor = 'rgba(3,3,3,0.98)';
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                    if(nav && window.scrollY < 50) nav.style.backgroundColor = 'transparent';
+                }
+            });
+        }
+
+        // 3. GSAP Animations
+        gsap.utils.toArray('.gs-up').forEach(element => {
+            gsap.fromTo(element, 
+                { y: 40, opacity: 0 },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 1,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        trigger: element,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    }
+                }
+            );
+        });
+
+        window.addEventListener('load', () => {
+            setTimeout(() => { ScrollTrigger.refresh(); }, 1000);
+        });
+    </script>
+</body>
+</html>
