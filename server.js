@@ -1,4 +1,3 @@
-// server.js
 require('dotenv').config();
 const express = require('express');
 const nodemailer = require('nodemailer');
@@ -7,13 +6,18 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Serve images from 'public' folder (available at /photo1.jpg, etc.)
-app.use(express.static('public'));
+// ========== MIDDLEWARE ==========
+// Parse form data
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Serve images from 'public' folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve static files (CSS, JS) from 'src' folder
-app.use(express.static('src'));
+app.use(express.static(path.join(__dirname, 'src')));
 
-// Route mappings - clean URLs without .html extension
+// ========== CLEAN URL ROUTES ==========
 app.get('/home', (req, res) => {
     res.sendFile(path.join(__dirname, 'src', 'index.html'));
 });
@@ -43,39 +47,22 @@ app.get('/', (req, res) => {
     res.redirect('/home');
 });
 
-// Handle 404 - page not found
-app.use((req, res) => {
-    res.status(404).sendFile(path.join(__dirname, 'src', '404.html'));
-});
-
-
-// Middleware to parse form data and serve your static HTML/CSS files
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// Serve static files (Assuming your HTML files are in a folder named 'public'. 
-// If they are in the root directory alongside server.js, use express.static(__dirname))
-app.use(express.static(__dirname)); 
-
-// Route to handle the form submission
+// ========== EMAIL FORM HANDLING ==========
 app.post('/submit-enquiry', async (req, res) => {
-    // Extract data sent from the HTML form
     const { name, email, phone, eventDate, eventType, location, message } = req.body;
 
-    // Set up Nodemailer transporter (Configure this with your email provider)
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: process.env.EMAIL_USER, // Your sending email address
-            pass: process.env.EMAIL_PASS  // Your email App Password
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         }
     });
 
-    // Structure the email you will receive
     const mailOptions = {
         from: `"${name}" <${process.env.EMAIL_USER}>`,
         replyTo: email,
-        to: 'jesleyfrantin@gmail.com', // Where you want to receive the enquiries
+        to: 'jesleyfrantin@gmail.com',
         subject: `New Photography Enquiry: ${eventType} - ${name}`,
         text: `
 You have received a new enquiry from your website!
@@ -95,30 +82,33 @@ ${message}
     };
 
     try {
-        // Send the email
         await transporter.sendMail(mailOptions);
         
-        // Show a success alert to the user and reload the page
         res.send(`
             <script>
                 alert("Thank you, ${name}! Your enquiry has been sent successfully. We will get back to you soon.");
-                window.location.href = "/contact.html";
+                window.location.href = "/contact";
             </script>
         `);
     } catch (error) {
         console.error("Error sending email:", error);
         
-        // Show an error alert if it fails
         res.status(500).send(`
             <script>
-                alert("Oops! Something went wrong while sending your enquiry. Please try again or contact us directly via WhatsApp.");
+                alert("Oops! Something went wrong. Please try again or contact us via WhatsApp.");
                 window.history.back();
             </script>
         `);
     }
 });
 
-// Start the server
+// ========== 404 HANDLER ==========
+app.use((req, res) => {
+    res.status(404).sendFile(path.join(__dirname, 'src', '404.html'));
+});
+
+// ========== START SERVER ==========
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Server running on http://localhost:${PORT}`);
+    console.log(`Visit: http://localhost:${PORT}/home`);
 });
