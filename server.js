@@ -55,7 +55,7 @@ app.use(express.json());
 
 // Serve static files (Assuming your HTML files are in a folder named 'public'. 
 // If they are in the root directory alongside server.js, use express.static(__dirname))
-// app.use(express.static(__dirname)); 
+app.use(express.static(__dirname)); 
 
 // Route to handle the form submission
 app.post('/submit-enquiry', async (req, res) => {
