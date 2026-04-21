@@ -295,7 +295,7 @@ nav.scrolled {
     /* Perfect Center Footer Update */
     .footer-bottom { flex-direction: column; gap: 1.5rem; align-items: center; text-align: center; }
     .footer-bottom-left { width: 100%; display: flex; justify-content: center; margin-bottom: 0.5rem; }
-    .footer-bottom-left .logo { margin: 0 auto; display: inline-block; }
+    .footer-bottom-left .logo { margin: 0 auto; display: inline-block; translate: 25px; }
     .footer-bottom-center, .footer-bottom-right { width: 100%; text-align: center !important; }
 
     /* Poetry Gallery Mobile Update */
