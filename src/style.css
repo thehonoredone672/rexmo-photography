@@ -306,6 +306,62 @@ nav.scrolled {
     .pg-horiz {
         grid-column: span 2;
     }
+
+    /* =========================================================
+       1. GALLERY FIX: Prevent the single left-out photo
+       ========================================================= */
+    /* Forces the last item in the grid to span both columns and changes 
+       it to a horizontal format so it fills the empty space beautifully */
+    .poetry-gallery .pg-item:last-child {
+        grid-column: span 2;
+        aspect-ratio: 16/9; 
+    }
+
+    /* =========================================================
+       2. POETRY PAGE FIX: Mobile responsiveness for iframes
+       ========================================================= */
+    /* Stacks the Instagram Reels, Posts, and YouTube Shorts vertically */
+    .reels-grid, .post-grid, .video-grid {
+        grid-template-columns: 1fr;
+        gap: 8vw;
+    }
+
+    /* Centers the section titles and social icons */
+    .social-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    /* Ensures the video wrappers don't stretch too tall on wide phones */
+    .yt-wrapper, .pure-ig-wrapper {
+        max-width: 340px;
+        width: 100%;
+        margin: 0 auto;
+    }
+/* Perfect Center Footer Update */
+    .footer-bottom { flex-direction: column; gap: 1.5rem; align-items: center; text-align: center; }
+    .footer-bottom-left { width: 100%; display: flex; justify-content: center; margin-bottom: 0.5rem; }
+    .footer-bottom-left .logo { margin: 0 auto; display: inline-block; translate: 25px; }
+    .footer-bottom-center, .footer-bottom-right { width: 100%; text-align: center !important; }
+
+    /* Poetry Gallery Mobile Update */
+    .poetry-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px; /* Fixed equal spacing for mobile */
+    }
+    .pg-horiz {
+        grid-column: span 2;
+    }
+
+    /* 👇 ADD THE NEW RULES HERE 👇 */
+    /* Ensures mobile stays organized for Poetry/Cinema sections */
+    .social-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; margin-bottom: 2rem; }
+    .reels-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 4vw; }
+    .video-grid { grid-template-columns: 1fr; gap: 4vw; }
+    .post-grid { grid-template-columns: 1fr; gap: 4vw; }
 }
 
 /* ==========================================================================
@@ -350,4 +406,39 @@ nav.scrolled {
     font-weight: 300;
     letter-spacing: 1px;
     line-height: 1.8;
+}
+
+
+/* ==========================================================================
+   MOBILE OVERRIDE FOR POETRY / CINEMA GRIDS
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* 1. Force the heading to stay aligned to the left */
+    .social-header {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-end !important;
+        text-align: left !important;
+        padding: 0 2vw; /* Gives a little breathing room on the edges */
+    }
+    
+    .social-header div {
+        text-align: left !important;
+    }
+
+    /* 2. Stack the grids and force a large gap between videos */
+    .reels-grid, 
+    .video-grid, 
+    .post-grid {
+        grid-template-columns: 1fr !important;
+        gap: 4rem !important; /* Creates clear vertical separation */
+        padding: 0 2vw;
+    }
+    
+    /* 3. Make the videos significantly larger on mobile */
+    .yt-wrapper, 
+    .pure-ig-wrapper {
+        max-width: 90vw !important; /* Expands the video to take up 90% of the screen width */
+        width: 100% !important;
+    }
 }
