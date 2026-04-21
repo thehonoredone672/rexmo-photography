@@ -1,10 +1,11 @@
-// Initialize Lenis Smooth Scroll
+// ===============================
+// 1. LENIS SMOOTH SCROLL SETUP
+// ===============================
 const lenis = new Lenis({
-    duration: 1.2,
-    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smooth: true,
+    lerp: 0.08, // 🔥 better performance than duration
     direction: 'vertical',
     gestureDirection: 'vertical',
-    smooth: true,
     mouseMultiplier: 1,
     smoothTouch: false,
     touchMultiplier: 2,
@@ -12,15 +13,27 @@ const lenis = new Lenis({
 });
 
 // Sync Lenis with GSAP ScrollTrigger
-lenis.on('scroll', ScrollTrigger.update);
-gsap.ticker.add((time)=>{ lenis.raf(time * 1000) });
-// Note: We deliberately removed lagSmoothing(0) so the browser doesn't freeze on heavy iframe pages!
+lenis.on('scroll', () => {
+    ScrollTrigger.update();
+});
 
-// Navbar Scroll Effect
+// Run Lenis on every frame
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+
+// Prevent frame drops freezing animations
+gsap.ticker.lagSmoothing(1000, 16);
+
+
+// ===============================
+// 2. NAVBAR SCROLL EFFECT (FIXED)
+// ===============================
 const nav = document.querySelector('nav');
+
 if (nav) {
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+    lenis.on('scroll', ({ scroll }) => {
+        if (scroll > 50) {
             nav.classList.add('scrolled');
         } else {
             nav.classList.remove('scrolled');
@@ -28,45 +41,89 @@ if (nav) {
     });
 }
 
-// Mobile Menu Toggle Logic
+
+// ===============================
+// 3. MOBILE MENU TOGGLE (SAFE)
+// ===============================
 const menuToggle = document.getElementById('mobile-menu');
 const navLinks = document.querySelector('.nav-links');
 
 if (menuToggle && navLinks) {
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+
         const icon = menuToggle.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+        if (icon) {
+            if (navLinks.classList.contains('active')) {
+                icon.classList.replace('fa-bars', 'fa-times');
+            } else {
+                icon.classList.replace('fa-times', 'fa-bars');
+            }
         }
     });
 }
 
-// Fade Up Elements safely using fromTo
-gsap.utils.toArray('.gs-up').forEach(element => {
-    gsap.fromTo(element, 
-        { y: 40, opacity: 0 },
-        {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: 'power3.out',
-            scrollTrigger: {
-                trigger: element,
-                start: 'top 85%',
-                toggleActions: 'play none none none'
-            }
-        }
-    );
+
+// ===============================
+// 4. GSAP SCROLL ANIMATIONS (OPTIMIZED)
+// ===============================
+gsap.set('.gs-up', {
+    y: 40,
+    opacity: 0
 });
 
-// Refresh GSAP after lazy-loaded elements pop in
+// Batch animations for performance
+ScrollTrigger.batch('.gs-up', {
+    start: 'top 85%',
+    onEnter: (batch) => {
+        gsap.to(batch, {
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: 'power3.out',
+            stagger: 0.1
+        });
+    }
+});
+
+
+// ===============================
+// 5. SCROLL PERFORMANCE HELPERS
+// ===============================
+
+// Disable iframe interaction while scrolling (prevents lag)
+let scrollTimeout;
+
+lenis.on('scroll', () => {
+    document.body.classList.add('scrolling-active');
+
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => {
+        document.body.classList.remove('scrolling-active');
+    }, 200);
+});
+
+
+// ===============================
+// 6. REFRESH FIXES (IMPORTANT)
+// ===============================
+
+// After page load (for lazy images)
 window.addEventListener('load', () => {
     setTimeout(() => {
         ScrollTrigger.refresh();
     }, 1000);
 });
+
+// On resize
+window.addEventListener('resize', () => {
+    ScrollTrigger.refresh();
+});
+
+
+// ===============================
+// 7. OPTIONAL: FORCE INITIAL REFRESH
+// ===============================
+setTimeout(() => {
+    ScrollTrigger.refresh();
+}, 500);
