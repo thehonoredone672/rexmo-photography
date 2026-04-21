@@ -338,3 +338,16 @@ nav.scrolled {
 .ig-wrapper { width: 100%; display: flex; justify-content: center; }
 /* Reduced max-width from 400px to 320px to make Instagram posts much sleeker */
 .ig-wrapper iframe, .ig-wrapper .instagram-media { width: 100% !important; max-width: 320px; border-radius: 12px; margin: 0 !important; }
+
+/* ===============================
+   HERO MINIMAL TEXT
+=============================== */
+.hero-subtext {
+    color: rgba(255, 255, 255, 0.65);
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 300;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
