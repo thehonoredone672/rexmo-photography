@@ -137,5 +137,41 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
     <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Select the form and the submit button
+            const contactForm = document.querySelector('.contact-form-grid');
+            const submitButton = document.querySelector('.btn-submit');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', (event) => {
+                    // 1. Stop the page from redirecting/reloading
+                    event.preventDefault(); 
+
+                    // 2. Change the button text and appearance
+                    const originalText = submitButton.textContent;
+                    submitButton.textContent = "Inquiry Sent ✓";
+                    submitButton.style.backgroundColor = "#4CAF50"; // Optional: turns button green
+                    submitButton.style.color = "#ffffff";
+                    submitButton.style.pointerEvents = "none"; // Prevents multiple clicks
+
+                    // 3. Clear the form fields
+                    contactForm.reset();
+
+                    // 4. (Optional) Revert the button back to normal after 4 seconds
+                    setTimeout(() => {
+                        submitButton.textContent = originalText;
+                        submitButton.style.backgroundColor = ""; // Resets to your CSS default
+                        submitButton.style.color = "";
+                        submitButton.style.pointerEvents = "auto";
+                    }, 4000);
+                    
+                    // Note: If you have a backend (like PHP, Node.js) or an email service (like Formspree or EmailJS), 
+                    // you would put your fetch() or AJAX call here to actually send the data.
+                });
+            }
+        });
+    </script>
+
 </body>
 </html>
