@@ -442,3 +442,14 @@ nav.scrolled {
         width: 100% !important;
     }
 }
+
+/* ==========================================================================
+   MOBILE OVERRIDE FOR LOCATIONS DIRECTORY
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Stack the main directory columns vertically */
+    .directory-grid {
+        grid-template-columns: 1fr !important;
+        gap: 4rem !important; /* Maintains consistent vertical spacing between sections */
+    }
+}
