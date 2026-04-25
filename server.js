@@ -76,7 +76,7 @@ Details:
 Name: ${name}
 Email: ${email}
 Phone: ${countryCode} ${phone}
-Event Date: ${eventDate}
+Event Date (yy/mm/dd): ${eventDate}
 Event Type: ${eventType}
 Location: ${location}
 -------------------------
