@@ -63,16 +63,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <style>
-        /* CHANGED: reduced padding-bottom from 10vh to 4vh to push the text lower */
-        .hero { height: 100vh; display: flex; align-items: flex-end; justify-content: center; position: relative; overflow: hidden; padding-bottom: 4vh; box-sizing: border-box; }
-        .hero-bg { position: absolute; inset: -5%; z-index: 0; background: url('/hero-bg-c.jpg') center/cover; filter: brightness(0.7); }
+        .hero { height: 100vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+        .hero-bg { position: absolute; inset: -5%; z-index: 0; background: url('/hero-bg-c.jpg') center/cover; filter: brightness(0.8); }
     </style>
     <meta name="theme-color" content="#030303">
 </head>
 <body>
 
     <nav>
-        <a href="/home" class="logo" style="opacity: 0.8; transition: opacity 0.3s ease;">
+        <a href="/home" class="logo" style="opacity: 0.6; transition: opacity 0.3s ease;">
             <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 45" width="100%" height="100%">
                 <text x="0" y="25" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="bold" fill="#ffffff">Rexmo</text>
                 <text x="2.5" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="3" font-weight="bold" letter-spacing="0.4em" fill="#ffffff">PHOTOGRAPHY</text>
@@ -92,13 +91,13 @@
     <header class="hero">
         <div class="hero-bg" decoding="async"></div>
         <div style="text-align: center; z-index: 2; position: relative; padding: 0 5vw; display: flex; flex-direction: column; align-items: center;">
-            <div class="gs-up" style="margin-bottom: 2.5rem;">
+            <div class="gs-up" style="margin-bottom: 0.5rem;">
                 <h1 style="font-family: var(--font-serif); font-size: clamp(4.5rem, 12vw, 9rem); line-height: 0.9; font-weight: 400; margin: 0; color: white; letter-spacing: 2px;">Rexmo</h1>
-                <h2 style="font-family: var(--font-serif); font-size: clamp(0.7rem, 2.5vw, 1.2rem); letter-spacing: 15px; font-weight: 400; text-transform: uppercase; margin: 10px -14px 15px 0; color: var(--text-primary);">Photography</h2>
+                <h2 style="font-family: var(--font-serif); font-size: clamp(0.7rem, 2.5vw, 1.2rem); letter-spacing: 15px; font-weight: 400; text-transform: uppercase; margin: 0 -14px 5px 0; color: var(--text-primary);">Photography</h2>
                 
-                <p style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 400; letter-spacing: 2px; color: var(--accent);">Est. 1992</p>
+                <p style="font-family: var(--font-sans); font-size: 0.85rem; font-weight: 400; letter-spacing: 3px; color: #FFD700; opacity: 0.85; margin: 0;">Est. 1992</p>
             </div>
-            <p class="gs-up text-large hero-subtext" style="font-weight: 400;">
+            <p class="gs-up text-large hero-subtext" style="font-weight: 400; margin-top: 0;">
                 For couples who choose legacy over trends, your love unfolds as a timeless cinematic masterpiece.
             </p>
         </div>
