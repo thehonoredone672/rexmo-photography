@@ -53,7 +53,7 @@ app.get('/', (req, res) => {
 
 // ========== EMAIL FORM HANDLING ==========
 app.post('/submit-enquiry', async (req, res) => {
-    const { name, email, phone, eventDate, eventType, location, message } = req.body;
+    const { name, email, countryCode, phone, eventDate, eventType, location, message } = req.body;
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -75,7 +75,7 @@ Details:
 -------------------------
 Name: ${name}
 Email: ${email}
-Phone: ${phone}
+Phone: ${countryCode} ${phone}
 Event Date: ${eventDate}
 Event Type: ${eventType}
 Location: ${location}
