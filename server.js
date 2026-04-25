@@ -67,9 +67,9 @@ app.post('/submit-enquiry', async (req, res) => {
         from: `"${name}" <${process.env.EMAIL_USER}>`,
         replyTo: email,
         to: 'rexmophotography55@gmail.com',
-        subject: `New Photography Enquiry: ${eventType} - ${name}`,
+        subject: `Photography Enquiry: ${name} - ${eventType}`,
         text: `
-You have received a new enquiry from your website!
+You have received a new enquiry from ${name}
 
 Details:
 -------------------------
@@ -79,9 +79,12 @@ Phone: ${phone}
 Event Date: ${eventDate}
 Event Type: ${eventType}
 Location: ${location}
+-------------------------
 
 Message:
+=========================
 ${message}
+=========================
         `
     };
 
