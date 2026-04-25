@@ -112,12 +112,42 @@
         </div>
 
         <div class="grey-text-box gs-up" style="padding: 4vw;">
+
+<style>
+    /* Turns the default black calendar icon to a premium gold color */
+    input[type="date"]::-webkit-calendar-picker-indicator {
+        filter: invert(73%) sepia(61%) saturate(388%) hue-rotate(5deg) brightness(96%) contrast(89%);
+        cursor: pointer;
+    }
+</style>
+
 <form action="/submit-enquiry" method="POST" class="contact-form-grid" id="contactForm">
     
     <div class="form-field"><label>Name</label><input type="text" name="name" placeholder="Name" required></div>
     <div class="form-field"><label>Email</label><input type="email" name="email" placeholder="Email" required></div>
-    <div class="form-field"><label>Phone</label><input type="tel" name="phone" placeholder="Phone" required></div>
-    <div class="form-field"><label>Event Date</label><input type="date" name="eventDate" required></div>
+    
+    <div class="form-field">
+        <label>Phone</label>
+        <div style="display: flex; gap: 10px;">
+            <input type="text" name="countryCode" value="+91" style="width: 50px; min-width: 50px; padding: 0 5px; text-align: center;" required
+                   oninput="this.value = this.value.replace(/[^0-9+]/g, '')">
+            
+            <input type="tel" name="phone" placeholder="Phone Number" style="flex: 1; min-width: 0;" required 
+                   oninput="if(/[^0-9]/.test(this.value)) { 
+                                this.setCustomValidity('Please enter numbers only.'); 
+                                this.reportValidity(); 
+                                this.value = this.value.replace(/[^0-9]/g, ''); 
+                            } else { 
+                                this.setCustomValidity(''); 
+                            }">
+        </div>
+    </div>
+    
+    <div class="form-field">
+        <label>Event Date</label>
+        <input type="date" name="eventDate" id="eventDate" max="9999-12-31" required>
+    </div>
+    
     <div class="form-field"><label>Event Type</label>
         <select name="eventType" required>
             <option value="" disabled selected>Event Type</option>
@@ -132,6 +162,10 @@
     
     <button type="submit" class="btn-submit full-width">Submit Enquiry</button>
 </form>
+
+<script>
+    
+</script>
             
         </div>
     </section>
@@ -178,6 +212,44 @@
 <script src="main.js"></script>
 
 <script>
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const dateInput = document.getElementById('eventDate');
+        
+        if (dateInput) {
+            // 1. Calculate today's date safely
+            const today = new Date();
+            const year = today.getFullYear();
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const day = String(today.getDate()).padStart(2, '0');
+            
+            // Format for the HTML attribute (YYYY-MM-DD)
+            const localTodayStr = `${year}-${month}-${day}`;
+            // Format for the user-facing error message (DD-MM-YYYY)
+            const displayDateStr = `${day}-${month}-${year}`;
+            
+            // Set minimum date to today
+            dateInput.setAttribute('min', localTodayStr);
+
+            // 2. Intercept the browser's default validation message
+            dateInput.addEventListener('invalid', function(e) {
+                if (dateInput.validity.rangeUnderflow) {
+                    // Custom message for past dates
+                    e.target.setCustomValidity(`Enter a valid date, ${displayDateStr} or later`);
+                } else {
+                    // Reset if it's some other error
+                    e.target.setCustomValidity('');
+                }
+            });
+
+            // 3. Clear the custom error when the user starts typing/changing the date again
+            dateInput.addEventListener('input', function(e) {
+                e.target.setCustomValidity('');
+            });
+        }
+    });
+
     document.addEventListener('DOMContentLoaded', () => {
         const contactForm = document.getElementById('contactForm');
         const submitButton = document.querySelector('.btn-submit');
